@@ -157,6 +157,7 @@ body {
 
                 label {
                     margin-left: 10px;
+                    font-size: 14px;
                 }
             }
 
@@ -166,6 +167,17 @@ body {
             }
         }
 
+        button {
+            margin-top: 40px;
+            background: #5C25B6;
+            width: 130px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 300;
+        }
         
     }
 }

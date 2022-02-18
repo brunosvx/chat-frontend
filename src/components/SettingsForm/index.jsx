@@ -20,6 +20,7 @@ function SettingsForm() {
                 </div>
             </div>
           </div>
+          <button>Salvar</button>
       </form>
       )
   }
