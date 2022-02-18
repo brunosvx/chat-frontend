@@ -8,76 +8,99 @@
 
 body {
     background: #242424;
-}
 
-a {
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-header {
-    background: #333;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 70px;
-    align-items: center;
-    font-weight: 300;
-
-    svg {
-        font-size: 20px;
-        vertical-align: top;
+    a {
+        text-decoration: none;
+        margin-left: 10px;
     }
 
-    ul {
-        display: flex;
-        gap: 15px;
-    }
-}
-
-section.messages {
-    width: calc(100% - 100px);
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    // overflow-y: auto;
-
-    .message-box {
+    header {
         background: #333;
-        padding: 15px;
-        border-radius: 5px;
-        max-width: 500px;
-        align-self: flex-end;
-        position: relative;
-        font-size: 15px;
-
-        .author {
-            font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 70px;
+        align-items: center;
+        font-weight: 300;
+    
+        svg {
+            font-size: 20px;
+            vertical-align: top;
         }
-
-        p {
-            font-weight: 300;
+    
+        ul {
+            display: flex;
+            gap: 15px;
         }
-        
-        &.left {
-            align-self: flex-start;
-        }
-
-        &::after {
-            content: '';
-            width:0px;
-            height: 0px;
-            border-top:20px solid #333;
+    }
+    
+    section.messages {
+        width: calc(100% - 100px);
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        // overflow-y: auto;
+    
+        .message-box {
+            background: #333;
+            padding: 15px;
             border-radius: 5px;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            position: absolute;
-            top: 0;
-            right: -15px;
+            max-width: 500px;
+            align-self: flex-end;
+            position: relative;
+            font-size: 15px;
+    
+            .author {
+                font-weight: 500;
+            }
+    
+            p {
+                font-weight: 300;
+            }
+            
+            &.left {
+                align-self: flex-start;
+            }
+    
+            &::after {
+                content: '';
+                width:0px;
+                height: 0px;
+                border-top:20px solid #333;
+                border-radius: 5px;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                position: absolute;
+                top: 0;
+                right: -15px;
+            }
+            
+            &.left::after {
+                left: -15px;
+            }
         }
-        
-        &.left::after {
-            left: -15px;
+    }
+    form#message {
+        padding: 15px 25px;
+        background: #333;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        input {
+            width: 90%;
+            outline: none;
+            border: none;
+            background: #242424;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        svg {
+            font-size: 25px;
+            align-self: center;
+            cursor: pointer;
         }
     }
 }
+
