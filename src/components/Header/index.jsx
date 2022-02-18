@@ -7,8 +7,7 @@ function Header() {
     return (
       <header>
           <div className="icon">
-              <FaGithub />
-              <a href="https://github.com/brunosvx" target="_blank" >Github</a>
+              <a href="https://github.com/brunosvx" target="_blank" ><FaGithub /> Github</a>
           </div>
           <nav>
               <ul>
