@@ -33,3 +33,51 @@ header {
         gap: 15px;
     }
 }
+
+section.messages {
+    width: calc(100% - 100px);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    // overflow-y: auto;
+
+    .message-box {
+        background: #333;
+        padding: 15px;
+        border-radius: 5px;
+        max-width: 500px;
+        align-self: flex-end;
+        position: relative;
+        font-size: 15px;
+
+        .author {
+            font-weight: 500;
+        }
+
+        p {
+            font-weight: 300;
+        }
+        
+        &.left {
+            align-self: flex-start;
+        }
+
+        &::after {
+            content: '';
+            width:0px;
+            height: 0px;
+            border-top:20px solid #333;
+            border-radius: 5px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            position: absolute;
+            top: 0;
+            right: -15px;
+        }
+        
+        &.left::after {
+            left: -15px;
+        }
+    }
+}

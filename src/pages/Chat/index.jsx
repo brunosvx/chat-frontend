@@ -1,11 +1,12 @@
 import Header from '../../components/Header';
+import Messages from '../../components/Messages';
 
 function Chat() {
 
   return (
     <>
       <Header />
-      <h1>Chat</h1>
+      <Messages />
     </>
     )
 }
