@@ -6,6 +6,11 @@
     list-style: none;
 }
 
+*::-webkit-scrollbar {
+    width: 0px;
+}
+
+
 body {
     background: #242424;
 
@@ -20,6 +25,12 @@ body {
         padding: 15px 70px;
         align-items: center;
         font-weight: 300;
+        position: fixed;
+        box-sizing: border-box;
+        width: 100vw;
+        z-index: 1;
+        top: 0;
+        left: 0;
     
         svg {
             font-size: 20px;
@@ -35,11 +46,14 @@ body {
     
     section.messages {
         width: calc(100% - 100px);
-        margin: 20px auto;
+        margin: 60px auto 0 auto;
         display: flex;
         flex-direction: column;
         gap: 15px;
-        // overflow-y: auto;
+        height: calc(100vh - 125px);
+        overflow-y: scroll;
+        box-sizing: border-box;
+        padding: 0 15px;
     
         .message-box {
             background: #333;
@@ -86,6 +100,11 @@ body {
         display: flex;
         justify-content: center;
         gap: 20px;
+        position: fixed;
+        bottom:0;
+        left: 0;
+        width: 100vw;
+        box-sizing: border-box;
 
         input {
             width: 90%;
