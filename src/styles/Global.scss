@@ -3,8 +3,33 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: white;
+    list-style: none;
 }
 
 body {
     background: #242424;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header {
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 70px;
+    align-items: center;
+    font-weight: 300;
+
+    svg {
+        font-size: 20px;
+        vertical-align: top;
+    }
+
+    ul {
+        display: flex;
+        gap: 15px;
+    }
 }

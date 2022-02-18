@@ -1,9 +1,12 @@
-
+import Header from '../../components/Header';
 
 function Chat() {
 
   return (
-    <h1>Chat</h1>
+    <>
+      <Header />
+      <h1>Chat</h1>
+    </>
     )
 }
 
