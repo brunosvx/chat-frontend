@@ -1,9 +1,14 @@
+import Header from '../../components/Header';
+import SettingsForm from '../../components/SettingsForm';
 
 
 function Settings() {
 
     return (
-      <h1>Settings</h1>
+      <>
+        <Header />
+        <SettingsForm />
+      </>
       )
   }
   

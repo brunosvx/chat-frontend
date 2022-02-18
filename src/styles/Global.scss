@@ -94,6 +94,7 @@ body {
             }
         }
     }
+
     form#message {
         padding: 15px 25px;
         background: #333;
@@ -120,6 +121,52 @@ body {
             align-self: center;
             cursor: pointer;
         }
+    }
+
+    form#settings {
+        margin: 80px 0 0 30px;
+
+        h2 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .setting {
+            margin-top: 25px;
+        }
+
+        .name {
+            input {
+                width: 70%;
+                max-width: 300px;
+                outline: none;
+                border: none;
+                background: #333;
+                padding: 7px 15px;
+                border-radius: 5px;
+            }
+        }
+
+        .notifications {
+
+            .options {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    margin-left: 10px;
+                }
+            }
+
+            input {
+                background: #333;
+                cursor: pointer;
+            }
+        }
+
+        
     }
 }
 
