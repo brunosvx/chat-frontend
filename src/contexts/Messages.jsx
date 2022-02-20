@@ -16,10 +16,18 @@ export function MessageContextProvider({ children }) {
         });
     }, [])
 
+    
+    function sendMessage(message) {
+        const name = localStorage.getItem('username') || 'unknown';
+
+        socket.emit('message', { text: message, name })
+    }
+
 
     return (
         <MessagesContext.Provider value={{
-            messages
+            messages,
+            sendMessage
         }}>
             {children}
         </MessagesContext.Provider>
