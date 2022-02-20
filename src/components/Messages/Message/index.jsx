@@ -1,14 +1,14 @@
 
 
-function Message({ id, message, author, right }) {
+function Message({ id, text, name, right }) {
 
     return (
       <div className={`message-box ${right ? 'right' : 'left'}`}>
           <span className="author">
-            { author }
+            { name }
           </span>
           <p>
-            { message }
+            { text }
           </p>
       </div>
       )
