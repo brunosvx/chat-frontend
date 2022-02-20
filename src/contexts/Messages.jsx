@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 
 export const MessagesContext = createContext({});
 
-const socket = io('ws://brunosvx-chat.herokuapp.com');
+const socket = io('wss://brunosvx-chat.herokuapp.com');
 
 export function MessageContextProvider({ children }) {
 
