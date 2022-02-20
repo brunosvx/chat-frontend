@@ -20,6 +20,7 @@ export function MessageContextProvider({ children }) {
     function sendMessage(message) {
         const name = localStorage.getItem('username') || 'unknown';
 
+        setMessages(oldMessages => [ ...oldMessages, { text: message, name , id: Math.random(), right: true }]);
         socket.emit('message', { text: message, name })
     }
 
