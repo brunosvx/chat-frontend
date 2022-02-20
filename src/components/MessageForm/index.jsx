@@ -27,7 +27,7 @@ function MessageForm() {
     return (
       <form id="message" onSubmit={handleFormSubmit} >
         <input type="text" placeholder="Mensagem" onChange={handleInput} value={input} />
-        <IoSend />
+        <IoSend onClick={handleFormSubmit} />
       </form>
       )
   }
