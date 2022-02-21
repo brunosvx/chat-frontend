@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 
 export const MessagesContext = createContext({});
 
-const socket = io('wss://brunosvx-chat.herokuapp.com');
+const socket = io(import.meta.env.WSURL || 'ws://localhost:3333');
 
 export function MessageContextProvider({ children }) {
 
@@ -12,15 +12,20 @@ export function MessageContextProvider({ children }) {
 
     useEffect(() => {
         socket.on('message', (data) => {
-            setMessages(oldMessages => [ ...oldMessages, { ...data, id: Math.random() }]);
+            pushMessage(data);
         });
     }, [])
+
+    
+    function pushMessage(message) {
+        setMessages(oldMessages => [ ...oldMessages, message ]);
+    }
 
     
     function sendMessage(message) {
         const name = localStorage.getItem('username') || 'unknown';
 
-        setMessages(oldMessages => [ ...oldMessages, { text: message, id: Math.random(), right: true }]);
+        pushMessage({ ...message, right: true });
         socket.emit('message', { text: message, name })
     }
 
