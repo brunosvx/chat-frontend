@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 
+import { v4 as uuid } from 'uuid';
+
 import { io } from 'socket.io-client';
 
 export const MessagesContext = createContext({});
@@ -25,8 +27,10 @@ export function MessageContextProvider({ children }) {
     function sendMessage(message) {
         const name = localStorage.getItem('username') || 'unknown';
 
-        pushMessage({ ...message, right: true });
-        socket.emit('message', { text: message, name })
+        const id = uuid();
+
+        pushMessage({ id, text: message, right: true });
+        socket.emit('message', { id, text: message, name })
     }
 
 
