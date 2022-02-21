@@ -5,6 +5,7 @@ import { io } from 'socket.io-client';
 export const MessagesContext = createContext({});
 
 const socket = io(import.meta.env.WSURL || 'ws://localhost:3333');
+console.log(import.meta.env);
 
 export function MessageContextProvider({ children }) {
 
