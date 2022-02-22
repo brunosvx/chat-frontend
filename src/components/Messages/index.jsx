@@ -11,7 +11,6 @@ function Messages() {
     const messagesSectionRef = useRef(null);
 
     useEffect(() => {
-      console.log(messagesSectionRef);
       messagesSectionRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth" })
     }, [messages])
 
