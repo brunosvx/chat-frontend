@@ -7,7 +7,7 @@ function Header() {
     return (
       <header>
           <div className="icon">
-              <a href="https://github.com/brunosvx" target="_blank" ><FaGithub /> Github</a>
+              <a href="https://github.com/brunosvx/chat-frontend" target="_blank" ><FaGithub /> Github</a>
           </div>
           <nav>
               <ul>
