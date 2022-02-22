@@ -19,7 +19,12 @@ export function MessageContextProvider({ children }) {
             const myMessages = JSON.parse(localStorage.getItem('myMessages')) || [];
             
             if(myMessages.every((id) => id !== data.id)){
-                messageNotificationAudio.play();
+                const settings = JSON.parse(localStorage.getItem('settings'));
+
+                if(settings?.enableNotifications !== false){
+                    messageNotificationAudio.play();
+                }
+                    
                 return pushMessage(data);
             }
 
