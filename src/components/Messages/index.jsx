@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 
 import { MessagesContext } from '../../contexts/Messages';
 
@@ -8,8 +8,14 @@ function Messages() {
 
     const { messages } = useContext(MessagesContext);
 
+    const messagesSectionRef = useRef(null);
+
+    useEffect(() => {
+      messagesSectionRef.current?.lastElementChild?.scrollIntoView({ behavior: "smooth" })
+    }, [messages])
+
     return (
-      <section className="messages">
+      <section className="messages" ref={messagesSectionRef} >
           { messages.map(props => <Message {...props} key={props.id} />) }
       </section>
       )
