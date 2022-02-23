@@ -3,18 +3,22 @@ import { useRef } from 'react';
 function SettingsForm() {
 
   const inputNameRef = useRef(null);
+  const inputRadioRef = useRef(null);
 
   const username = localStorage.getItem('username');
-
+  const currentEnableNotifications = JSON.parse(localStorage.getItem('settings'))?.enableNotifications;
+  
   function handleFormSubmit(event) {
     event.preventDefault();
 
     const name = inputNameRef.current?.value.trim();
+    const enableNotifications = inputRadioRef.current?.checked;
 
     if(name.length <= 0 || name.length > 20) return alert('Nome deve ter entre 1 e 20 caracteres');
 
     localStorage.setItem('username', name);
-    alert('Configurações salvas')
+    localStorage.setItem('settings', JSON.stringify({ enableNotifications }));
+    alert('Configurações salvas');
   }
 
     return (
@@ -27,12 +31,18 @@ function SettingsForm() {
             <h2>Sons de Notificações</h2>
             <div className="options">
                 <div className="option">
-                    <input type="radio" name="notification-settings" id="enable" value="enable" />
-                    <label htmlFor="enable">Enable</label>
+
+                    <input type="radio" name="notification-settings" id="enable" value="enable"
+                    defaultChecked={currentEnableNotifications || currentEnableNotifications === undefined} ref={inputRadioRef} />
+
+                    <label htmlFor="enable">Habilitado</label>
                 </div>
                 <div className="option">
-                    <input type="radio" name="notification-settings" id="disable" value="disable" />
-                    <label htmlFor="disable">Disable</label>
+
+                    <input type="radio" name="notification-settings" id="disable" value="disable"
+                    defaultChecked={currentEnableNotifications === false} />
+                    
+                    <label htmlFor="disable">Desabilitado</label>
                 </div>
             </div>
           </div>

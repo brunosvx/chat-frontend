@@ -1,22 +1,30 @@
 import { createContext, useEffect, useState } from 'react';
 
 import { v4 as uuid } from 'uuid';
-
 import { io } from 'socket.io-client';
+import messageNotification from '../assets/audios/message-notification.mp3';
 
 export const MessagesContext = createContext({});
 
 const socket = io(import.meta.env.VITE_WSURL || 'ws://localhost:3333');
 
+const messageNotificationAudio = new Audio(messageNotification);
+
 export function MessageContextProvider({ children }) {
-
+    
     const [messages, setMessages] = useState([]);
-
+    
     useEffect(() => {
         socket.on('message', (data) => {
             const myMessages = JSON.parse(localStorage.getItem('myMessages')) || [];
-
+            
             if(myMessages.every((id) => id !== data.id)){
+                const settings = JSON.parse(localStorage.getItem('settings'));
+
+                if(settings?.enableNotifications !== false){
+                    messageNotificationAudio.play();
+                }
+                    
                 return pushMessage(data);
             }
 
