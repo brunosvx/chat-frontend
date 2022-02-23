@@ -4,6 +4,7 @@
     font-family: 'Poppins', sans-serif;
     color: white;
     list-style: none;
+    scrollbar-width: none;
 }
 
 *::-webkit-scrollbar {
@@ -22,7 +23,7 @@ body {
         background: #333;
         display: flex;
         justify-content: space-between;
-        padding: 15px 70px;
+        padding: 15px 5%;
         align-items: center;
         font-weight: 300;
         position: fixed;
@@ -45,7 +46,7 @@ body {
     }
     
     section.messages {
-        width: calc(100% - 100px);
+        width: 95%;
         margin: 60px auto 80px auto;
         display: flex;
         flex-direction: column;
@@ -60,9 +61,11 @@ body {
             padding: 15px;
             border-radius: 5px;
             max-width: 500px;
+            min-width: 50px;
             align-self: flex-end;
             position: relative;
             font-size: 15px;
+            word-break: break-all;
     
             .author {
                 font-weight: 500;
@@ -181,4 +184,7 @@ body {
         
     }
 }
+
+
+// @media (max-width:)
 
